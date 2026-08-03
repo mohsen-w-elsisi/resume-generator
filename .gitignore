@@ -1,0 +1,5 @@
+resume.config.json
+package-lock.json
+node_modules/
+content/
+dist/
