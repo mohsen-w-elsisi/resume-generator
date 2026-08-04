@@ -4,14 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsc; node index.js"
-  },
-  "devDependencies": {
-    "@types/node": "^20.4.2",
-    "typescript": "^5.1.6"
+    "dev": "tsc; node index.js",
+    "build": "tsc",
+    "test": "vitest --config tests/vitest.config.ts run tests"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "dependencies": {
+    "docxtemplater": "^3.69.3",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "@types/yaml": "^1.9.6",
+    "typescript": "^5.1.6",
+    "vitest": "^4.1.10"
+  }
 }

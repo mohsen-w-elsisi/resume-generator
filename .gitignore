@@ -1,5 +1,7 @@
+content/
+template.docx
 resume.config.json
 package-lock.json
 node_modules/
-content/
 dist/
+ai/
