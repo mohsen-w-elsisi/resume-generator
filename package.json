@@ -2,18 +2,20 @@
   "name": "resume-generator",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "dev": "tsc; node index.js",
+    "dev": "tsc && node dist/index.js",
     "build": "tsc",
     "test": "vitest --config tests/vitest.config.ts run tests"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mohsen Elsisi",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@types/pizzip": "^3.0.5",
     "docxtemplater": "^3.69.3",
+    "pizzip": "^3.2.0",
     "zod": "^4.4.3"
   },
   "devDependencies": {
