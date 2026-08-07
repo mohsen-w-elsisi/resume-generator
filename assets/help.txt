@@ -1,0 +1,26 @@
+Resume Generator
+
+Generate a customised resume document from content files and a DOCX template.
+
+Usage:
+  resume-generator [options]
+
+Options:
+  -o <file>      Write the generated document to the specified output file.
+                 Defaults to resume.docx.
+  -c <path>      Use the specified content directory.
+                 Defaults to content.
+  -x <path>      Use the specified DOCX template file.
+                 Defaults to template.docx.
+  -a             Include all content entries without prompting for confirmation.
+  -t <tag>...    Only include entries that contain the given tag(s).
+  -h             Show this help message and exit.
+
+Examples:
+  resume-generator -t webdev flutter
+    Only include entries tagged with webdev and flutter.
+  resume-generator -o "custom resume.docx"
+    Prompt for each entry and save the output as custom resume.docx.
+
+The generator reads projects, tools, and platforms from the content folder and
+combines them with the provided DOCX template to create the final document.

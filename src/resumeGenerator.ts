@@ -1,7 +1,7 @@
 import Docxtemplater from "docxtemplater";
 import { readFile, writeFile } from "fs/promises";
 import PizZip from "pizzip";
-import { Content } from "./content";
+import { Content } from "./content.js";
 
 export default class ResumeGenerator {
   private readonly templatePath: string;

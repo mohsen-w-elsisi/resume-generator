@@ -1,12 +1,20 @@
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-import { OptionsParser } from "./options";
-import ResumeGenerator from "./resumeGenerator";
-import { ContentLoader } from "./content";
-import { ContentCustomiser } from "./customiser";
+import { OptionsParser } from "./options.js";
+import ResumeGenerator from "./resumeGenerator.js";
+import { ContentLoader } from "./content.js";
+import { ContentCustomiser } from "./customiser.js";
+import showHelpMessage from "./help.js";
 
 async function main() {
-  const { paths, addTags, addAllContent } = new OptionsParser().parse();
+  const { paths, addTags, addAllContent, showHelp } =
+    new OptionsParser().parse();
+
+  if (showHelp) {
+    await showHelpMessage();
+    return;
+  }
 
   const content = await new ContentLoader(paths.content, addTags).load();
 
@@ -17,7 +25,7 @@ async function main() {
   process.stdout.write(`Generated ${path.basename(paths.output)}\n`);
 }
 
-if (require.main === module) {
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
   main().catch((error: unknown) => {
     const message = error instanceof Error ? error.message : String(error);
     process.stderr.write(`${message}\n`);

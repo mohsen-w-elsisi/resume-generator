@@ -3,7 +3,7 @@ import path from "node:path";
 
 import { z } from "zod";
 
-import type { Parser } from "./parser";
+import type { Parser } from "./parser.js";
 
 export class PlatformsParser implements Parser<Platform> {
   constructor(private readonly rootDir: string) {}

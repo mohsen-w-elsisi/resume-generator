@@ -1,6 +1,10 @@
 import path from "path";
-import type { Project, Tool, Platform } from "./parsers";
-import { ProjectsParser, ToolsParser, PlatformsParser } from "./parsers";
+import type { Project, Tool, Platform } from "./parsers/index.js";
+import {
+  ProjectsParser,
+  ToolsParser,
+  PlatformsParser,
+} from "./parsers/index.js";
 
 export interface Content {
   projects: Project[];

@@ -1,6 +1,6 @@
 import readline from "node:readline/promises";
 
-import { Content, FilterableContent } from "./content";
+import { Content, FilterableContent } from "./content.js";
 
 export class ContentCustomiser {
   private readonly readline: readline.Interface;

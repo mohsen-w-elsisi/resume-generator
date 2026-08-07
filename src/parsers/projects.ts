@@ -4,7 +4,7 @@ import path from "node:path";
 import { z } from "zod";
 import { parse as parseYaml } from "yaml";
 
-import type { Parser } from "./parser";
+import type { Parser } from "./parser.js";
 
 const projectEntrySchema = z.object({
   title: z.string(),

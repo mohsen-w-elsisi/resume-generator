@@ -1,7 +1,7 @@
-export type { Parser } from './parser';
-export { ProjectsParser, Project } from './projects';
-export { ToolsParser, Tool } from './tools';
-export { PlatformsParser, Platform } from './platforms';
+export type { Parser } from './parser.js';
+export { ProjectsParser, Project } from './projects.js';
+export { ToolsParser, Tool } from './tools.js';
+export { PlatformsParser, Platform } from './platforms.js';
 
 export const parserNames = ['projects', 'tools', 'platforms'] as const;
 
