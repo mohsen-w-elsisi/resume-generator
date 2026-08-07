@@ -20,7 +20,7 @@ describe("OptionsParser", () => {
       "-a",
       "-h",
     ]).parse();
-
+  
     expect(options).toEqual({
       paths: {
         content: path.resolve(process.cwd(), "custom-content"),

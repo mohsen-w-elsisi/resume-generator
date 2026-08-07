@@ -10,6 +10,7 @@ const projectEntrySchema = z.object({
   title: z.string(),
   favourite: z.boolean(),
   description: z.string(),
+  tags: z.array(z.string()),
   tools: z.array(z.string()),
   links: z.array(
     z.object({
@@ -69,7 +70,7 @@ class ProjectEntryParser {
     const id = path.basename(path.dirname(this.filePaths.info));
     const details = await readFile(this.filePaths.details, "utf-8");
     const resume = await readFile(this.filePaths.resume, "utf-8");
-    
+
     return {
       ...(await this.parseProjectInfo()),
       id,
@@ -78,6 +79,7 @@ class ProjectEntryParser {
       icon: await this.getIconPath(),
       thumbnail: await this.getThumbnailImage(),
       showcaseImages: await this.getShowcaseImages(),
+      tags: [],
     };
   }
 
