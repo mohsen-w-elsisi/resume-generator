@@ -1,5 +1,5 @@
 {
-  "name": "resume-generator",
+  "name": "@mohsen-w-elsisi/resume-generator",
   "version": "1.0.0",
   "author": "Mohsen Elsisi",
   "license": "MIT",
@@ -10,6 +10,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/mohsen-w-elsisi/resume-generator"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "main": "dist/index.js",
   "bin": {
