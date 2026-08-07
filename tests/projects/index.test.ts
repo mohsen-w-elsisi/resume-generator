@@ -40,6 +40,7 @@ const proceduralTerrainProject = {
   title: "procedural terrain generation",
   favourite: false,
   description: "2D terrain generation using perling noise",
+  tags: ["graphics", "algorithms"],
   tools: ["typescript", "firebase"],
   links: [
     {
