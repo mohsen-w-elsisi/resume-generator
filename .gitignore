@@ -2,7 +2,6 @@ content/
 template.docx
 resume.docx
 resume.config.json
-package-lock.json
 node_modules/
 dist/
 ai/
