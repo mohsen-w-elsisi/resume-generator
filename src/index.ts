@@ -8,14 +8,9 @@ import { ContentCustomiser } from "./customiser";
 async function main() {
   const { paths, addTags, addAllContent } = new OptionsParser().parse();
 
-  let content = await new ContentLoader(
-    paths.content,
-    addAllContent ? undefined : addTags,
-  ).load();
+  const content = await new ContentLoader(paths.content, addTags).load();
 
-  if (addTags.length == 0 && !addAllContent) {
-    content = await new ContentCustomiser(content).customise();
-  }
+  if (!addAllContent) await new ContentCustomiser(content).customise();
 
   await new ResumeGenerator(paths.template, paths.output, content).generate();
 

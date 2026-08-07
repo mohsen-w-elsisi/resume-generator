@@ -13,7 +13,7 @@ export type TaggableContent = { tags: string[] };
 export type FilterableContent = Project;
 
 export class ContentLoader {
-  private readonly tags: string[] | undefined;
+  private readonly tags: string[];
 
   private readonly parsers: {
     projects: ProjectsParser;
@@ -23,7 +23,7 @@ export class ContentLoader {
 
   private content!: Content;
 
-  constructor(contentRoot: string, tags?: string[]) {
+  constructor(contentRoot: string, tags: string[]) {
     this.tags = tags;
 
     const contentPaths = {
@@ -46,17 +46,19 @@ export class ContentLoader {
       this.parsers.platforms.parse(),
     ]);
     this.content = { projects, tools, platforms };
-    // await this.filterContent();
+    this.filterContent();
     return this.content;
   }
 
-  private async filterContent() {
-    if (!this.tags) return;
+  private filterContent() {
+    if (this.tags.length == 0) return;
 
-    const hasMatchingTag = (<T extends TaggableContent>(entry: T) =>
-      entry.tags.some((tag): tag is string => this.tags!.includes(tag))).bind(
-      this,
-    );
+    const hasMatchingTag = (<T extends TaggableContent>(entry: T) => {
+      for (const tag of entry.tags) {
+        if (this.tags.includes(tag)) return true;
+      }
+      return false;
+    }).bind(this);
 
     this.content.projects = this.content.projects.filter(hasMatchingTag);
   }

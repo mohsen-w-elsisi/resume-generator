@@ -79,7 +79,6 @@ class ProjectEntryParser {
       icon: await this.getIconPath(),
       thumbnail: await this.getThumbnailImage(),
       showcaseImages: await this.getShowcaseImages(),
-      tags: [],
     };
   }
 
