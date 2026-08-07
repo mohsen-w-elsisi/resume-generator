@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -25,10 +27,8 @@ async function main() {
   process.stdout.write(`Generated ${path.basename(paths.output)}\n`);
 }
 
-if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  main().catch((error: unknown) => {
-    const message = error instanceof Error ? error.message : String(error);
-    process.stderr.write(`${message}\n`);
-    process.exitCode = 1;
-  });
-}
+main().catch((error: unknown) => {
+  const message = error instanceof Error ? error.message : String(error);
+  process.stderr.write(`${message}\n`);
+  process.exitCode = 1;
+});

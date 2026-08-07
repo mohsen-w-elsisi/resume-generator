@@ -1,25 +1,38 @@
 {
   "name": "resume-generator",
   "version": "1.0.0",
-  "description": "",
+  "author": "Mohsen Elsisi",
+  "license": "MIT",
+  "description": "Program to generate Mohsen's resume from content folder",
+  "keywords": [
+    "resume"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mohsen-w-elsisi/resume-generator"
+  },
   "main": "dist/index.js",
+  "bin": {
+    "generate-resume": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "assets"
+  ],
+  "type": "module",
   "scripts": {
     "dev": "tsc && node dist/index.js",
     "build": "tsc",
     "test": "vitest --config tests/vitest.config.ts run tests"
   },
-  "keywords": [],
-  "author": "Mohsen Elsisi",
-  "license": "ISC",
-  "type": "module",
   "dependencies": {
-    "@types/pizzip": "^3.0.5",
     "docxtemplater": "^3.69.3",
     "pizzip": "^3.2.0",
     "zod": "^4.4.3"
   },
   "devDependencies": {
     "@types/node": "^20.19.43",
+    "@types/pizzip": "^3.0.5",
     "@types/yaml": "^1.9.6",
     "typescript": "^5.1.6",
     "vitest": "^4.1.10"
