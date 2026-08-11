@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 import path from "node:path";
-import { fileURLToPath } from "node:url";
 
 import { OptionsParser } from "./options.js";
 import ResumeGenerator from "./resumeGenerator.js";

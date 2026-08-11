@@ -2,7 +2,7 @@ import path from "node:path";
 
 import { describe, expect, it } from "vitest";
 
-import { MissingValueError, OptionsParser } from "@src/options";
+import { MissingValueError, OptionsParser } from "@src/options.js";
 
 describe("OptionsParser", () => {
   it("uses the defaults when no arguments are provided", () => {

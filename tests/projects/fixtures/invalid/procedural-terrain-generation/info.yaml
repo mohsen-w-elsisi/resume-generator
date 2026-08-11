@@ -1,7 +1,0 @@
-title: procedural terrain generation
-favourite: not-a-boolean
-tools:
-  - typescript
-links:
-  - platform: github
-    url: https://github.com/mohsen-w-elsisi/procedural-terrain-gen

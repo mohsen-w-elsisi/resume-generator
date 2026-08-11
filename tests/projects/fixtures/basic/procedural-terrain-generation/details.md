@@ -1,1 +1,0 @@
-This project details markdown fixture.

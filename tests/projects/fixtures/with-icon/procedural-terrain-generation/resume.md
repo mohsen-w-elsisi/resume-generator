@@ -1,1 +1,0 @@
-This project resume markdown fixture.
